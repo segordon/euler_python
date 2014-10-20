@@ -4,18 +4,21 @@ __author__ = 'segordon'
 # By starting with 1 and 2, the first 10 terms will be:
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 # By considering the terms in the Fibonacci sequence whose values
-# do not exceed four million, find the sum of the even-valued terms.
+# do not exceed four million, find the total of the even-valued terms.
 
 def fib(n):
     if n == 0: return 0
     elif n == 1: return 1
     else: return fib(n-1)+fib(n-2)
+
 fibo = 0
 x = 0
-sum = 0
+total = 0
+
 while fibo <= 4000000:
     fibo = fib(x)
     if fibo % 2 == 0:
-        sum += fibo
+        total += fibo
     x += 1
-print sum
+
+print total
