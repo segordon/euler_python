@@ -8,18 +8,11 @@ __author__ = 'segordon'
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
-# Euclid's formula
 
-
-def find_triplets(i):
-    m = 2
-    n = 1
-    for x in range(i):
-        a = (m ** 2) - (n ** 2)
-        b = 2 * (m*n)
-        c = (m ** 2) + (n ** 2)
-        m += 1
-        n += 1
-        return a,b,c
-
-print find_triplets(3)
+def find_triplets():
+    for c in range(2, 1000):
+        for a in range(1,c):
+            b = 1000 - c - a
+            if (a ** 2) + (b ** 2) == (c ** 2):
+                print a,b,c,a+b+c,a*b*c
+find_triplets()
