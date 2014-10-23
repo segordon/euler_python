@@ -7,11 +7,43 @@ n = "731671765313306249192251196744265747423553491949349698352031277450632623957
 
 
 products = []
+factors_list = []
 
 def digits(a,b):
     return (str(n)[a:b])
 
+def factor_lister():
+    a = 0
+    b = 13
+    trip = 0
+    while trip == 0:
+        if digits(a,b) == n[-13:]:
+            factors_list.append(digits(a,b))
+            trip = 1
+        else:
+            factors_list.append(digits(a,b))
+            a += 1
+            b += 1
 
-print digits(0,13)
+def multi():
+    for i in range(len(factors_list)):
+        factors = factors_list.pop(0)
+        ax = factors[0]
+        bx = factors[1]
+        cx = factors[2]
+        dx = factors[3]
+        ex = factors[4]
+        fx = factors[5]
+        gx = factors[6]
+        hx = factors[7]
+        ix = factors[8]
+        jx = factors[9]
+        kx = factors[10]
+        lx = factors[11]
+        mx = factors[12]
+        products.append(int(ax) * int(bx) * int(cx) * int(dx) * int(ex) * int(fx) * int(gx) * int(hx) * int(ix) * int(jx) * int(kx) * int(lx) * int(mx))
 
-# for i in n
+factor_lister()
+multi()
+
+print max(products)
