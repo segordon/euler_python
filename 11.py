@@ -44,7 +44,7 @@ def value_grabber(row, column):
     return value
 
 
-def splitter(i,offset):
+def hor_splitter(i,offset):
     x = offset
     y = x + 4
     return i[x:y]
