@@ -45,7 +45,6 @@ def value_grabber(row, column):
 
 
 def splitter(i,offset):
-    new_list = i
     x = offset
     y = x + 4
     return i[x:y]
