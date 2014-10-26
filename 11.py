@@ -36,8 +36,8 @@ def column_grabber(i):
     return columns
 
 
-def value_grabber(row, column):
-    value = row_grabber(row)[column]
+def value_grabber(i, start, stop):
+    value = i[start:stop]
     return value
 
 
@@ -46,6 +46,10 @@ def splitter(i, offset):
     y = x + 4
     return i[x:y]
 
+test_list = []
+start = 0
+stop = 4
 
-print column_grabber(0)
-
+for row in rows:
+    test_list.append(value_grabber(row, start, stop))
+print test_list
