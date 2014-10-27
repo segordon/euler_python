@@ -25,8 +25,8 @@ rows = [[8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 
         [01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48]]
 
 
-def row_grabber(i):
-    return rows[i]
+# def row_grabber(i):
+#     return rows[i]
 
 
 def column_grabber(i):
@@ -41,19 +41,48 @@ def value_grabber(i, start, stop):
     return value
 
 
-def splitter(i, offset):
-    x = offset
-    y = x + 4
-    return i[x:y]
+# def splitter(i, offset):
+#     x = offset
+#     y = x + 4
+#     return i[x:y]
 
-test_list = []
-start = 0
-stop = 4
 
-for row in rows:
-    for i in row:
-        test_list.append(value_grabber(row, start, stop))
-        start += 1
-        stop += 1
-print test_list, stop
+def horizontal_quadruplets():
+    test_list = []
+    start = 0
+    stop = 4
+    row_num = 0
 
+    for row in rows:
+        for i in row:
+            if stop != 21:
+                test_list.append(value_grabber(row, start, stop))
+                start += 1
+                stop += 1
+            else:
+               if row_num != 21:
+                    start = 0
+                    stop = 4
+                    row_num += 1
+    return test_list
+
+def vertical_quadruplets():
+    test_list = []
+    start = 0
+    stop = 4
+    row_num = 0
+
+    for row in rows:
+        if row_num != 21:
+            test_list.append(value_grabber(row, start, stop))
+            row_num += 1
+        else:
+            if row_num == 21:
+                if stop != 21:
+                    row_num = 0
+                    start += 1
+                    stop += 1
+    return test_list
+
+# print horizontal_quadruplets()
+print vertical_quadruplets()
