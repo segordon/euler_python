@@ -51,5 +51,9 @@ start = 0
 stop = 4
 
 for row in rows:
-    test_list.append(value_grabber(row, start, stop))
-print test_list
+    for i in row:
+        test_list.append(value_grabber(row, start, stop))
+        start += 1
+        stop += 1
+print test_list, stop
+
