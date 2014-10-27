@@ -68,4 +68,3 @@ def horizontal_quadruplets():
 
 
 def vertical_quadruplets():
-    quadruplet_list = []
