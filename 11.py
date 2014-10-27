@@ -48,7 +48,7 @@ def value_grabber(i, start, stop):
 
 
 def horizontal_quadruplets():
-    test_list = []
+    quadruplet_list = []
     start = 0
     stop = 4
     row_num = 0
@@ -56,7 +56,7 @@ def horizontal_quadruplets():
     for row in rows:
         for i in row:
             if stop != 21:
-                test_list.append(value_grabber(row, start, stop))
+                quadruplet_list.append(value_grabber(row, start, stop))
                 start += 1
                 stop += 1
             else:
@@ -64,25 +64,8 @@ def horizontal_quadruplets():
                     start = 0
                     stop = 4
                     row_num += 1
-    return test_list
+    return quadruplet_list
+
 
 def vertical_quadruplets():
-    test_list = []
-    start = 0
-    stop = 4
-    row_num = 0
-
-    for row in rows:
-        if row_num != 21:
-            test_list.append(value_grabber(row, start, stop))
-            row_num += 1
-        else:
-            if row_num == 21:
-                if stop != 21:
-                    row_num = 0
-                    start += 1
-                    stop += 1
-    return test_list
-
-# print horizontal_quadruplets()
-print vertical_quadruplets()
+    quadruplet_list = []
