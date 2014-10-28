@@ -68,3 +68,9 @@ def horizontal_quadruplets():
 
 
 def vertical_quadruplets():
+    verts = []
+    for i in rows:
+        verts.append(i[0])
+    return verts
+
+print vertical_quadruplets()
