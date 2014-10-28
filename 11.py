@@ -68,9 +68,17 @@ def horizontal_quadruplets():
 
 
 def vertical_quadruplets():
-    verts = []
-    for i in rows:
-        verts.append(i[0])
-    return verts
+    rown = 0
+    coln = 0
+    column = []
+    while rown != 21:
+        while coln != 21:
+            column.append(rows[rown][coln])
+            coln += 1
+            if
+            coln = 0
+            rown += 1
+
+    return column
 
 print vertical_quadruplets()
