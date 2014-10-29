@@ -68,8 +68,6 @@ def horizontal_quadruplets():
 
 
 def vertical_quadruplets():
-    rown = 0
 
-    return column
 
 print vertical_quadruplets()
