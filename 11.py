@@ -58,11 +58,31 @@ def horizontal_quadruplets():
 
 
 def vertical_quadruplets():
-    verts = []
+    verticals = []
+    vertical_list = []
+    column = 0
 
-    for row in rows:
-        for num in row:
-            verts.append(num)
-        return verts
+    for i in range(0,20):
+        for row in rows:
+            verticals.append(row[column])
+        vertical_list.append(verticals)
+        verticals = []
+        column += 1
+    return vertical_list
 
-print vertical_quadruplets()
+
+def diagonal_quadruplets():
+    diagonals = []
+    diagonal_list = []
+    column = 0
+
+    for i in range(0,17):
+        for row in rows:
+            diagonals.append(row[column])
+            if column <= 17:
+                column += 1
+        diagonal_list.append(diagonals)
+        diagonals = []
+    return diagonal_list
+
+print diagonal_quadruplets()
